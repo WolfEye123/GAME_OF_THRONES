@@ -1,6 +1,7 @@
 body {
     height: 100%;
     width: 100%;
+    min-width: 900px;
     margin: 0;
 }
 
@@ -42,7 +43,7 @@ body {
     font-size: 2.7rem;
 }
 
-#firstInput, #secondInput{
+#firstInput, #secondInput, #inputSubmit{
     font-size: 1.1rem;
     padding-top: 35px;
     padding-left: 20%;
@@ -91,5 +92,17 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked + #checkboxLabel::before{
-    background-color: black;
+    background-image: url("form/checked.png");
+    background-repeat: no-repeat;
+}
+
+#submit{
+    outline: none;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font: 1.1rem GameOfThrones;
+    color: white;
+    background-color: #c0994f;
+    border: 0;
 }
