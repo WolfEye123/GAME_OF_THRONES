@@ -34,7 +34,6 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #d3bb89;
-    font-family: GameOfThrones;
 }
 
 #got {
@@ -43,16 +42,16 @@ body {
     font-size: 2.7rem;
 }
 
-#firstInput, #secondInput, #inputSubmit{
+#firstInput, #secondInput, #inputSubmit {
     font-size: 1.1rem;
-    padding-top: 35px;
+    padding-top: 20px;
     padding-left: 20%;
     padding-right: 20%;
 }
 
-#email, #password{
+#email, #password, #name{
     margin-top: 15px;
-    width: 100%;
+    width: 75%;
 }
 
 span{
@@ -60,7 +59,8 @@ span{
     color: white;
 }
 
-input[type="email"], input[type="password"]{
+input[type="email"], input[type="password"],
+input[type="text"], select{
     outline: none;
     font: 0.9rem Arial;
     background: url("form/darknoise.png");
@@ -105,4 +105,86 @@ input[type="checkbox"]:checked + #checkboxLabel::before{
     color: white;
     background-color: #c0994f;
     border: 0;
+}
+
+#gotNext{
+    font-family: GameOfThrones;
+    padding-top: 60px;
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+#tellAboutYourself{
+    font-family: Arial;
+    font-size: 0.9rem;
+    color: #c7c9c6;
+    margin-left: 20%;
+    margin-top: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #d3bb89;
+}
+
+#firstInputSecondForm, #secondInputSecondForm,
+#thirdInputSecondForm{
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+#whoAreYou{
+    font-size: 1.2rem;
+}
+
+#alpha-numeric{
+    font-family: Arial;
+    font-size: 0.7rem;
+    color: #c7c9c6;
+}
+
+#house{
+    margin-top: 30px;
+    width: 75%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+option{
+    color: #d3bb89;
+    background-color: #2c2b27;
+}
+
+textarea{
+    font: 0.8rem Arial;
+    color: #d3bb89;
+    background: url("form/darknoise.png") center center no-repeat;
+    margin-top: 15px;
+    width: 75%;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+#line{
+    border: #d3bb89;
+    width: 100%;
+    margin-left: 20%;
+}
+
+hr{
+    background-color: #d3bb89;
+    border: none;
+    height: 2px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+input[type="submit"]{
+    color: white;
+    background-color: #d3bb89;
+    outline: none;
+    border: none;
+    margin-left: 20%;
+    margin-top: 30px;
+    padding: 10px 10px;
+    width: 60%;
 }
