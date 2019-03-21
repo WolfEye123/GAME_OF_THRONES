@@ -1,25 +1,24 @@
 body {
     height: 100%;
     width: 100%;
-    min-width: 900px;
+    min-width: 1024px;
     margin: 0;
 }
 
 @font-face {
     font-family: 'GameOfThrones';
-    url('fonts/GameOfThrones.ttf') format('truetype');
+    src: url('fonts/GameOfThrones.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
 }
-
 
 .mainWrap {
     display: flex;
     flex-direction: row;
 }
 
-#leftSide {
+.leftBlock {
     width: 50%;
     height: 625px;
     background-image: url("form/dark1.png");
@@ -27,7 +26,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#rightSide {
+.rightBlock {
     width: 50%;
     height: 625px;
     background-image: url("form/darknoise.png");
@@ -36,20 +35,23 @@ body {
     color: #d3bb89;
 }
 
-#got {
+.rightBlock__got {
     padding-top: 100px;
     text-align: center;
     font-size: 2.7rem;
 }
 
-#firstInput, #secondInput, #inputSubmit {
+.rightBlock__firstInput,
+.rightBlock__secondInput,
+.inputSubmit {
     font-size: 1.1rem;
     padding-top: 20px;
     padding-left: 20%;
-    padding-right: 20%;
 }
 
-#email, #password, #name{
+#rightBlock__firstInput--email,
+#rightBlock__secondInput--password,
+#rightBlock__firstInputSecondForm--name{
     margin-top: 15px;
     width: 75%;
 }
@@ -63,14 +65,16 @@ input[type="email"], input[type="password"],
 input[type="text"], select{
     outline: none;
     font: 0.9rem Arial;
+    width: 75%;
     background: url("form/darknoise.png");
     border: none;
+    margin-top: 20px;
     padding-bottom: 15px;
     border-bottom: 2px solid #d3bb89;
     color: #d3bb89;
 }
 
-#checkboxPlace{
+.rightBlock__checkboxPlace{
     font-size: 1.2rem;
     padding-top: 20px;
     margin-left: 20%;
@@ -80,7 +84,7 @@ input[type="checkbox"]{
     display: none;
 }
 
-#checkboxLabel::before{
+.checkboxLabel::before{
     content: '';
     display: inline-block;
     width: 17px;
@@ -91,14 +95,14 @@ input[type="checkbox"]{
     margin-right: 10px;
 }
 
-input[type="checkbox"]:checked + #checkboxLabel::before{
+input[type="checkbox"]:checked + .checkboxLabel::before{
     background-image: url("form/checked.png");
     background-repeat: no-repeat;
 }
 
-#submit{
+.rightBlock__inputSubmit--submit{
     outline: none;
-    width: 100%;
+    margin-right: 20%;
     padding-top: 15px;
     padding-bottom: 15px;
     font: 1.1rem GameOfThrones;
@@ -107,14 +111,14 @@ input[type="checkbox"]:checked + #checkboxLabel::before{
     border: 0;
 }
 
-#gotNext{
+.rightBlock__gotNext{
     font-family: GameOfThrones;
     padding-top: 60px;
     text-align: center;
     font-size: 2.3rem;
 }
 
-#tellAboutYourself{
+.rightBlock__tellAboutYourself{
     font-family: Arial;
     font-size: 0.9rem;
     color: #c7c9c6;
@@ -124,17 +128,18 @@ input[type="checkbox"]:checked + #checkboxLabel::before{
     border-left: 2px solid #d3bb89;
 }
 
-#firstInputSecondForm, #secondInputSecondForm,
-#thirdInputSecondForm{
+.rightBlock__firstInputSecondForm,
+.rightBlock__secondInputSecondForm,
+.rightBlock__thirdInputSecondForm{
     margin-left: 20%;
     margin-top: 20px;
 }
 
-#whoAreYou{
+.rightBlock__firstInputSecondForm--whoAreYou{
     font-size: 1.2rem;
 }
 
-#alpha-numeric{
+.rightBlock__firstInputSecondForm--alpha-numeric{
     font-family: Arial;
     font-size: 0.7rem;
     color: #c7c9c6;
@@ -145,7 +150,6 @@ input[type="checkbox"]:checked + #checkboxLabel::before{
     width: 75%;
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
 }
 
 option{
@@ -180,7 +184,7 @@ hr{
 
 input[type="submit"]{
     color: white;
-    background-color: #d3bb89;
+    background-color: #c0994f;
     outline: none;
     border: none;
     margin-left: 20%;
