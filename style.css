@@ -16,6 +16,7 @@ body {
 .mainWrap {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .leftBlock {
@@ -79,6 +80,9 @@ input[type="text"], select{
     padding-bottom: 15px;
     border-bottom: 2px solid #d3bb89;
     color: #d3bb89;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .rightBlock__checkboxPlace{
@@ -154,8 +158,6 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
 #house{
     margin-top: 30px;
     width: 75%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
 
 option{
