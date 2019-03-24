@@ -16,21 +16,19 @@ body {
 .mainWrap {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    height: 100vh;
 }
 
 .leftBlock {
     width: 50%;
-    height: 625px;
-    background-image: url("form/dark1.png");
+    background-image: url("images/dark1.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .rightBlock {
     width: 50%;
-    height: 625px;
-    background-image: url("form/darknoise.png");
+    background-image: url("images/darknoise.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #d3bb89;
@@ -74,7 +72,7 @@ input[type="text"], select{
     outline: none;
     font: 0.9rem Arial;
     width: 75%;
-    background: url("form/darknoise.png");
+    background: url("images/darknoise.png");
     border: none;
     margin-top: 20px;
     padding-bottom: 15px;
@@ -106,7 +104,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked + .checkboxLabel::before{
-    background-image: url("form/checked.png");
+    background-image: url("images/checked.png");
     background-repeat: no-repeat;
 }
 
@@ -168,7 +166,7 @@ option{
 textarea{
     font: 0.8rem Arial;
     color: #d3bb89;
-    background: url("form/darknoise.png") center center no-repeat;
+    background: url("images/darknoise.png") center center no-repeat;
     margin-top: 15px;
     width: 75%;
     border: none;
