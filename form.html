@@ -5,70 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GAME OF THRONES</title>
-    <link rel="shortcut icon" type="image/png" href="form/dark1.png"/>
+    <link rel="shortcut icon" type="image/png" href="images/dark1.png"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="mainWrap">
-    <div class="leftBlock"></div>
-    <div class="rightBlock">
-        <form action="">
-            <div class="rightBlock__got">GAME OF THRONES</div>
-            <div class="rightBlock__firstInput">
-                <label for="rightBlock__firstInput--email">Enter your email</label>
-                <input type="email" id="rightBlock__firstInput--email" size="35" maxlength="35"
-                       placeholder="arya@westeros.com">
+    <div class="lBlock"></div>
+    <div class="rBlock">
+        <div id="form1" class="show">
+            <form id="loginForm">
+                <div class="rBlock_got">GAME OF THRONES</div>
+                <div class="rBlock_fInput">
+                    <label for="rBlock_fInput-email">Enter your email</label>
+                    <input type="email" id="rBlock_fInput-email" size="35" maxlength="35"
+                           placeholder="arya@westeros.com">
+                </div>
+                <div id="emailError" class="error"></div>
+                <div class="rBlock_sInput">
+                    <label for="rBlock_sInput-pass">Choose secure password</label>
+                    <span>Must be at least 8 characters</span>
+                    <input type="password" id="rBlock_sInput-pass" size="35" maxlength="35"
+                           placeholder="password">
+                </div>
+                <div id="passError" class="error"></div>
+                <div class="rBlock_checkbox">
+                    <input type="checkbox" id="rBlock_checkbox-Label">
+                    <label for="rBlock_checkbox-Label" class="checkboxLabel">Remember Me</label>
+                </div>
+            </form>
+            <div id="rBlock_submit">
+                <input type="submit" id="formSubmit" class="rBlock_submit" value="Sign up">
             </div>
-            <div class="rightBlock__secondInput">
-                <label for="rightBlock__secondInput--password">Choose secure password</label>
-                <span>Must be at least 8 characters</span>
-                <input type="password" id="rightBlock__secondInput--password" size="35" maxlength="35"
-                       placeholder="password">
-            </div>
-            <div class="rightBlock__checkboxPlace">
-                <input type="checkbox" id="rightBlock__checkboxPlace--checkboxLabel">
-                <label for="rightBlock__checkboxPlace--checkboxLabel" class="checkboxLabel">Remember Me</label>
-            </div>
-            <div id="rightBlock__inputSubmit">
-                <input type="submit" class="rightBlock__inputSubmit--submit" value="Sign up">
-            </div>
-        </form>
-
-        <!--<form>-->
-            <!--<div class="rightBlock__gotNext">GAME OF THRONES</div>-->
-            <!--<div class="rightBlock__tellAboutYourself">-->
-                <!--You've successfully joined the game. <br>-->
-                <!--Tell us more about yourself.-->
-            <!--</div>-->
-            <!--<div class="rightBlock__firstInputSecondForm">-->
-                <!--<label for="rightBlock__firstInputSecondForm&#45;&#45;name" class="rightBlock__firstInputSecondForm&#45;&#45;whoAreYou">Who are you?</label>-->
-                <!--<div class="rightBlock__firstInputSecondForm&#45;&#45;alpha-numeric">-->
-                    <!--Alpha-numeric username-->
-                <!--</div>-->
-                <!--<input type="text" id="rightBlock__firstInputSecondForm&#45;&#45;name" maxlength="35"-->
-                       <!--placeholder="arya">-->
-            <!--</div>-->
-            <!--<div class="rightBlock__secondInputSecondForm">-->
-                <!--<label for="rightBlock__secondInputSecondForm&#45;&#45;house">Your Great House</label>-->
-                <!--<select name="houses" id="rightBlock__secondInputSecondForm&#45;&#45;house">-->
-                    <!--<option hidden selected disabled>Select House</option>-->
-                    <!--<option value="Targaryen">Targaryen of King's Landing.</option>-->
-                    <!--<option value="Stark">Stark of Winterfell.</option>-->
-                    <!--<option value="Lannister">Lannister of Casterly Rock.</option>-->
-                    <!--<option value="Arryn">Arryn of the Eyrie.</option>-->
-                    <!--<option value="Tully">Tully of Riverrun.</option>-->
-                    <!--<option value="Greyjoy">Greyjoy of Pyke.</option>-->
-                    <!--<option value="Baratheon">Baratheon of Storm's End.</option>-->
-                    <!--<option value="Tyrell">Tyrell of Highgarden.</option>-->
-                <!--</select>-->
-            <!--</div>-->
-            <!--<div class="rightBlock__thirdInputSecondForm">-->
-                <!--<label for="rightBlock__thirdInputSecondForm&#45;&#45;textarea">Your preferences, hobbies, wishes, etc.</label>-->
-                <!--<textarea wrap="hard" rows="3" id="rightBlock__thirdInputSecondForm&#45;&#45;textarea" placeholder="I have a long TOKILL list"></textarea>-->
-            <!--</div>-->
-            <!--<input type="submit" value="Save">-->
-        <!--</form>-->
+        </div>
+        <div id="form2" class="hide">
+            <form id="aboutForm">
+                <div class="rBlock_gotForm2">GAME OF THRONES</div>
+                <div class="rBlock_aboutUForm2">
+                    You've successfully joined the game. <br>
+                    Tell us more about yourself.
+                </div>
+                <div class="rBlock__fInputForm2">
+                    <label for="rBlock_fInputForm2-name" class="rBlock_fInputForm2-whoAreYou">Who are you?</label>
+                    <div class="rBlock_fInputForm2-username">
+                        Alpha-numeric username
+                    </div>
+                    <input type="text" id="rBlock_fInputForm2-name" maxlength="35"
+                           placeholder="arya">
+                </div>
+                <div class="rBlock_sInputForm2">
+                    <label for="rBlock_sInputForm2-houses">Your Great House</label>
+                    <select name="houses" id="rBlock_sInputForm2-houses">
+                        <option hidden selected disabled>Select House</option>
+                        <option value="Targaryen">Targaryen of King's Landing.</option>
+                        <option value="Stark">Stark of Winterfell.</option>
+                        <option value="Lannister">Lannister of Casterly Rock.</option>
+                        <option value="Arryn">Arryn of the Eyrie.</option>
+                        <option value="Tully">Tully of Riverrun.</option>
+                        <option value="Greyjoy">Greyjoy of Pyke.</option>
+                        <option value="Baratheon">Baratheon of Storm's End.</option>
+                        <option value="Tyrell">Tyrell of Highgarden.</option>
+                    </select>
+                </div>
+                <div class="rBlock__thInputForm2">
+                    <label for="rBlock_thInputForm2-textarea">Your preferences, hobbies, wishes, etc.</label>
+                    <textarea wrap="hard" rows="3" id="rBlock_thInputForm2-textarea" placeholder="I have a long TOKILL list"></textarea>
+                </div>
+                <input type="submit" value="Save">
+            </form>
+        </div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

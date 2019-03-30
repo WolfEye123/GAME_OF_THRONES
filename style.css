@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    min-height: 600px;
     width: 1366px;
     margin: 0 auto;
 }
@@ -17,14 +18,14 @@ body {
     height: 100%;
 }
 
-.leftBlock {
+.lBlock {
     width: 50%;
     background-image: url("images/dark1.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-.rightBlock {
+.rBlock {
     width: 50%;
     background-image: url("images/darknoise.png");
     background-size: 100% 100%;
@@ -32,15 +33,23 @@ body {
     color: #d3bb89;
 }
 
-.rightBlock__got {
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.rBlock_got {
     font-family: GameOfThrones;
     padding-top: 100px;
     text-align: center;
     font-size: 2rem;
 }
 
-.rightBlock__firstInput,
-.rightBlock__secondInput{
+.rBlock_fInput,
+.rBlock_sInput{
     padding-top: 40px;
     padding-left: 20%;
     padding-right: 20%;
@@ -77,7 +86,7 @@ input[type="text"], select{
     appearance: none;
 }
 
-.rightBlock__checkboxPlace{
+.rBlock_checkbox{
     font-size: 1.2rem;
     margin-left: 20%;
     margin-top: 20px;
@@ -103,7 +112,7 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     background-repeat: no-repeat;
 }
 
-.rightBlock__inputSubmit--submit{
+.rBlock_submit{
     outline: none;
     margin-right: 20%;
     padding-top: 15px;
@@ -114,14 +123,14 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     border: 0;
 }
 
-.rightBlock__gotNext{
+.rBlock_gotForm2{
     font-family: GameOfThrones;
     padding-top: 60px;
     text-align: center;
     font-size: 1.8rem;
 }
 
-.rightBlock__tellAboutYourself{
+.rBlock_aboutUForm2{
     font-family: Arial;
     font-size: 0.9rem;
     color: #c7c9c6;
@@ -131,24 +140,24 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     border-left: 2px solid #d3bb89;
 }
 
-.rightBlock__firstInputSecondForm,
-.rightBlock__secondInputSecondForm,
-.rightBlock__thirdInputSecondForm{
+.rBlock__fInputForm2,
+.rBlock_sInputForm2,
+.rBlock__thInputForm2{
     margin-left: 20%;
     margin-top: 20px;
     margin-right: 20%;
 }
 
-.rightBlock__secondInputSecondForm{
+.rBlock_sInputForm2{
     display: flex;
     flex-direction: column;
 }
 
-.rightBlock__firstInputSecondForm--whoAreYou{
+.rBlock_fInputForm2-whoAreYou{
     font-size: 1.2rem;
 }
 
-.rightBlock__firstInputSecondForm--alpha-numeric{
+.rBlock_fInputForm2-username{
     font-family: Arial;
     font-size: 0.7rem;
     color: #c7c9c6;
@@ -184,4 +193,10 @@ input[type="submit"]{
     margin-top: 50px;
     padding: 10px 10px;
     width: 60%;
+}
+
+.error{
+    color: red;
+    padding-top: 10px;
+    margin-left: 20%;
 }
