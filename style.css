@@ -195,8 +195,15 @@ input[type="submit"]{
     width: 60%;
 }
 
-.error{
+.showError{
+    display: block;
     color: red;
+    padding-top: 10px;
+    margin-left: 20%;
+}
+
+.hideError{
+    display: none;
     padding-top: 10px;
     margin-left: 20%;
 }

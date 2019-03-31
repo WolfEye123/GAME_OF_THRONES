@@ -1,7 +1,17 @@
 const email = document.getElementById("rBlock_fInput-email");
 email.addEventListener('focus', (e) => {
     const emailError = document.getElementById("emailError");
-    emailError.innerText = "";
+    if (emailError.className === "showError") {
+        const email = document.getElementById("rBlock_fInput-email");
+        const regExpEmail = new RegExp(/\w+\@\w+\.\w+/);
+        email.oninput = function () {
+            if (!email.value.match(regExpEmail)) {
+                emailError.className = "showError";
+            } else {
+                emailError.className = "hideError";
+            }
+        }
+    }
 });
 
 
@@ -10,15 +20,24 @@ email.addEventListener('blur', (e) => {
     const emailError = document.getElementById("emailError");
     const regExpEmail = new RegExp(/\w+\@\w+\.\w+/);
     if (!email.match(regExpEmail)) {
-        emailError.className = "error";
-        emailError.innerText = "Incorrect email";
+        emailError.className = "showError";
     }
 });
 
 const pass = document.getElementById("rBlock_sInput-pass");
 pass.addEventListener('focus', (e) => {
     const passError = document.getElementById("passError");
-    emailError.innerText = "";
+    if (passError.className === "showError") {
+        const pass = document.getElementById("rBlock_sInput-pass");
+        const regExpPass = new RegExp(/\d+/);
+        pass.oninput = function () {
+            if (!pass.value.match(regExpPass)) {
+                passError.className = "showError";
+            } else {
+                passError.className = "hideError";
+            }
+        }
+    }
 });
 
 pass.addEventListener('blur', (e) => {
@@ -26,8 +45,7 @@ pass.addEventListener('blur', (e) => {
     const passError = document.getElementById("passError");
     const regExpPass = new RegExp(/\d+/);
     if (!pass.match(regExpPass)) {
-        passError.className = "error";
-        passError.innerText = "Incorrect password";
+        passError.className = "showError";
     }
 });
 
@@ -35,6 +53,10 @@ const form = document.getElementById("formSubmit");
 form.addEventListener('click', (e) => {
     const loginFormStyle = document.getElementById("form1");
     const aboutFormStyle = document.getElementById("form2");
-    loginFormStyle.className = "hide";
-    aboutFormStyle.className = "show";
+    const emailError = document.getElementById("emailError");
+    const passError = document.getElementById("passError");
+    if (emailError.className === "hideError" && passError.className === "hideError") {
+        loginFormStyle.className = "hide";
+        aboutFormStyle.className = "show";
+    }
 });
