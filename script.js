@@ -9,7 +9,7 @@ email.addEventListener('focus', (e) => {
         const email = document.getElementById("rBlock_fInput-email");
         const regExpEmail = new RegExp(/\w+\@\w+\.\w+/);
         email.oninput = function () {
-            if (!email.value.match(regExpEmail)) {
+            if (!email.value.match(regExpEmail) && email.value != "") {
                 emailError.className = "showError";
             } else {
                 emailError.className = "hideError";
@@ -25,7 +25,7 @@ email.addEventListener('blur', (e) => {
     const email = document.getElementById("rBlock_fInput-email").value;
     const emailError = document.getElementById("emailError");
     const regExpEmail = new RegExp(/\w+\@\w+\.\w+/);
-    if (!email.match(regExpEmail)) {
+    if (!email.match(regExpEmail) && email != "") {
         emailError.className = "showError";
     }
 });
@@ -41,7 +41,7 @@ pass.addEventListener('focus', (e) => {
         const pass = document.getElementById("rBlock_sInput-pass");
         const regExpPass = new RegExp(/\d+/);
         pass.oninput = function () {
-            if (!pass.value.match(regExpPass)) {
+            if (!pass.value.match(regExpPass) && pass.value != "") {
                 passError.className = "showError";
             } else {
                 passError.className = "hideError";
@@ -57,7 +57,7 @@ pass.addEventListener('blur', (e) => {
     const pass = document.getElementById("rBlock_sInput-pass").value;
     const passError = document.getElementById("passError");
     const regExpPass = new RegExp(/\d+/);
-    if (!pass.match(regExpPass)) {
+    if (!pass.match(regExpPass) && pass != "") {
         passError.className = "showError";
     }
 });
