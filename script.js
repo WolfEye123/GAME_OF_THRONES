@@ -1,3 +1,7 @@
+/**
+ * the method processes the input email with the focus on it
+ * @type {HTMLElement}
+ */
 const email = document.getElementById("rBlock_fInput-email");
 email.addEventListener('focus', (e) => {
     const emailError = document.getElementById("emailError");
@@ -14,7 +18,9 @@ email.addEventListener('focus', (e) => {
     }
 });
 
-
+/**
+ * the method processes the input email at the end of the focus on it
+ */
 email.addEventListener('blur', (e) => {
     const email = document.getElementById("rBlock_fInput-email").value;
     const emailError = document.getElementById("emailError");
@@ -24,6 +30,10 @@ email.addEventListener('blur', (e) => {
     }
 });
 
+/**
+ * the method processes the input password with the focus on it
+ * @type {HTMLElement}
+ */
 const pass = document.getElementById("rBlock_sInput-pass");
 pass.addEventListener('focus', (e) => {
     const passError = document.getElementById("passError");
@@ -40,6 +50,9 @@ pass.addEventListener('focus', (e) => {
     }
 });
 
+/**
+ * the method processes the input password at the end of the focus on it
+ */
 pass.addEventListener('blur', (e) => {
     const pass = document.getElementById("rBlock_sInput-pass").value;
     const passError = document.getElementById("passError");
@@ -49,6 +62,10 @@ pass.addEventListener('blur', (e) => {
     }
 });
 
+/**
+ * the method hides the first form and shows the second after validation of all fields
+ * @type {HTMLElement}
+ */
 const form = document.getElementById("formSubmit");
 form.addEventListener('click', (e) => {
     const loginFormStyle = document.getElementById("form1");
