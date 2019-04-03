@@ -60,7 +60,7 @@ $(document).ready(() => {
             rB_sInpForm2_sub.hide();
             rB_thInpForm2.hide();
         } else {
-            $('#lBlock').css('background-image', 'images/housesToSlider/maxresdefault.jpg');
+            $('#lBlock').css('background-image', `url(images/maxresdefault.jpg)`);
             rB_sInpForm2_sub.show();
             rB_thInpForm2.show();
             flag = !flag;
@@ -73,7 +73,7 @@ $(document).ready(() => {
         let name = $(this).text();
         if (liFOption.text() === "Select House") {
             liFOption.html(`<img src="images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`);
-            $('#lBlock').css('background-image', 'images/housesToSlider/${name}.png');
+            $('.lBlock').css('background-image', `url(images/housesToSlider/${name}.png)`);
             flag = !flag;
         }
         rB_sInpForm2_sub.show();
