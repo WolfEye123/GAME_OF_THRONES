@@ -41,6 +41,7 @@ pass.addEventListener('focus', (e) => {
         const pass = document.getElementById("rBlock_sInput-pass");
         const regExpPass = new RegExp(/\d+/);
         pass.oninput = function () {
+            console.log(pass.length);
             if (!pass.value.match(regExpPass) && pass.value != "") {
                 passError.className = "showError";
             } else {
@@ -57,6 +58,7 @@ pass.addEventListener('blur', (e) => {
     const pass = document.getElementById("rBlock_sInput-pass").value;
     const passError = document.getElementById("passError");
     const regExpPass = new RegExp(/\d+/);
+    console.log(pass.length);
     if (!pass.match(regExpPass) && pass != "") {
         passError.className = "showError";
     }

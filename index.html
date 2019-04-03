@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GAME OF THRONES</title>
     <link rel="shortcut icon" type="image/png" href="images/dark1.png"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/selectStyle.css">
 </head>
 <body>
 <div class="mainWrap">
-    <article class="lBlock"></article>
-    <article class="rBlock">
+    <section id="lBlock" class="lBlock"></section>
+    <section class="rBlock">
         <section id="form1" class="show">
             <form id="loginForm">
                 <div class="rBlock_got">GAME OF THRONES</div>
@@ -53,28 +54,33 @@
                            placeholder="arya">
                 </div>
                 <div class="rBlock_sInputForm2">
-                    <label for="rBlock_sInputForm2-houses">Your Great House</label>
-                    <select name="houses" id="rBlock_sInputForm2-houses">
-                        <option hidden selected disabled>Select House</option>
-                        <option value="Targaryen">Targaryen of King's Landing.</option>
-                        <option value="Stark">Stark of Winterfell.</option>
-                        <option value="Lannister">Lannister of Casterly Rock.</option>
-                        <option value="Arryn">Arryn of the Eyrie.</option>
-                        <option value="Tully">Tully of Riverrun.</option>
-                        <option value="Greyjoy">Greyjoy of Pyke.</option>
-                        <option value="Baratheon">Baratheon of Storm's End.</option>
-                        <option value="Tyrell">Tyrell of Highgarden.</option>
-                    </select>
+                    <label>Your Great House</label>
+                    <section class="wrapper">
+                        <div class="newSelector"></div>
+                    </section>
+<!--                    <select name="houses" id="rBlock_sInputForm2-houses">-->
+<!--                        <option hidden selected disabled>Select House</option>-->
+<!--                        <option value="Targaryen">Targaryen of King's Landing.</option>-->
+<!--                        <option value="Stark">Stark of Winterfell.</option>-->
+<!--                        <option value="Lannister">Lannister of Casterly Rock.</option>-->
+<!--                        <option value="Arryn">Arryn of the Eyrie.</option>-->
+<!--                        <option value="Tully">Tully of Riverrun.</option>-->
+<!--                        <option value="Greyjoy">Greyjoy of Pyke.</option>-->
+<!--                        <option value="Baratheon">Baratheon of Storm's End.</option>-->
+<!--                        <option value="Tyrell">Tyrell of Highgarden.</option>-->
+<!--                    </select>-->
                 </div>
-                <div class="rBlock__thInputForm2">
+                <div id="rBlock__thInputForm2" class="rBlock__thInputForm2">
                     <label for="rBlock_thInputForm2-textarea">Your preferences, hobbies, wishes, etc.</label>
                     <textarea wrap="hard" rows="3" id="rBlock_thInputForm2-textarea" placeholder="I have a long TOKILL list"></textarea>
                 </div>
-                <input type="submit" value="Save">
+                <input type="submit" id="rBlock_sInputForm2-submit" value="Save">
             </form>
         </section>
-    </article>
+    </section>
 </div>
-<script src="script.js"></script>
+<script src="scripts/jQuery.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/selectScript.js"></script>
 </body>
 </html>

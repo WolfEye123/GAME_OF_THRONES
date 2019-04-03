@@ -6,7 +6,7 @@ body {
 
 @font-face {
     font-family: 'GameOfThrones';
-    src: url('fonts/GameOfThrones.ttf') format('truetype');
+    src: url('../fonts/GameOfThrones.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,16 +20,15 @@ body {
 
 .lBlock {
     width: 50%;
-    background-image: url("images/maxresdefault.jpg");
+    background-image: url("../images/maxresdefault.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .rBlock {
     width: 50%;
-    background-image: url("images/darknoise.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-image: url("../images/darknoise.png");
+    background-size: contain;
     color: #d3bb89;
     font-family: "EB Garamond";
 }
@@ -74,10 +73,10 @@ span{
 input[type="email"], input[type="password"],
 input[type="text"], select{
     outline: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: "EB Garamond";
     width: 100%;
-    background: url("images/darknoise.png");
+    background: url("../images/darknoise.png");
     border: none;
     margin-top: 20px;
     padding-bottom: 15px;
@@ -110,7 +109,7 @@ input[type="checkbox"]{
 }
 
 input[type="checkbox"]:checked + .checkboxLabel::before{
-    background-image: url("images/checked.png");
+    background-image: url("../images/checked.png");
     background-repeat: no-repeat;
 }
 
@@ -173,9 +172,9 @@ option{
 }
 
 textarea{
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #d3bb89;
-    background: url("images/darknoise.png") center center no-repeat;
+    background: url("../images/darknoise.png") center center no-repeat;
     margin-top: 15px;
     width: 100%;
     outline: none;
