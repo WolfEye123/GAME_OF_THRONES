@@ -29,7 +29,7 @@ $(document).ready(() => {
     // create list objects
     select.append($(li).addClass('fOption').html(`<label>Select House</label>`));
     for (let name of NAMES) {
-        select.append($(li).addClass('hide').html(`<img src="images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`));
+        select.append($(li).addClass('hide').html(`<img src="../images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`));
     }
 
     // list selectors
@@ -41,11 +41,11 @@ $(document).ready(() => {
 
     // option hover
     liHide.mouseenter(function () {
-        $(this).css('background-image', 'url("images/dark1.png")');
+        $(this).css('background-image', 'url("../images/dark1.png")');
         $(this).css('color', 'black');
     });
     liHide.mouseleave(function () {
-        $(this).css('background-image', 'url("images/darknoise.png")');
+        $(this).css('background-image', 'url("../images/darknoise.png")');
         $(this).css('color', '#d3bb89');
     });
 
@@ -60,7 +60,7 @@ $(document).ready(() => {
             rB_sInpForm2_sub.hide();
             rB_thInpForm2.hide();
         } else {
-            $('#lBlock').css('background-image', `url(images/maxresdefault.jpg)`);
+            $('#lBlock').css('background-image', `url(../images/maxresdefault.jpg)`);
             rB_sInpForm2_sub.show();
             rB_thInpForm2.show();
             flag = !flag;
@@ -72,8 +72,8 @@ $(document).ready(() => {
         $('li').toggleClass('option');
         let name = $(this).text();
         if (liFOption.text() === "Select House") {
-            liFOption.html(`<img src="images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`);
-            $('.lBlock').css('background-image', `url(images/housesToSlider/${name}.png)`);
+            liFOption.html(`<img src="../images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`);
+            $('.lBlock').css('background-image', `url(../images/housesToSlider/${name}.png)`);
             flag = !flag;
         }
         rB_sInpForm2_sub.show();

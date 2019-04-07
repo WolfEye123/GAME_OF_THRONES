@@ -11,6 +11,10 @@ body {
     font-style: normal;
 }
 
+.visitors{
+    float: right;
+}
+
 .mainWrap {
     display: flex;
     flex-direction: row;
@@ -48,8 +52,8 @@ body {
     font-size: 2rem;
 }
 
-.rBlock_fInput,
-.rBlock_sInput{
+.rBlock_email,
+.rBlock_pass{
     padding-top: 40px;
     padding-left: 20%;
     padding-right: 20%;
