@@ -34,6 +34,7 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
                            placeholder="arya@westeros.com" required>
                 </div>
                 <div id="emailError" class="hideError">Incorrect email</div>
+                <div id="unknownUser" class="hideError">There are no registered accounts for this email</div>
                 <div class="rBlock_pass">
                     <label for="rBlock_pass">Choose secure password</label>
                     <span>Must be at least 8 characters</span>
@@ -49,14 +50,12 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
                     <label for="rBlock_checkbox" class="checkboxLabel">Remember Me</label>
                 </div>
                 <div id="rBlock_submit">
-                    <input type="submit" id="formSubmit" class="rBlock_submit" value="Sign up">
+                    <input type="submit" disabled="disabled" id="formSubmit" class="rBlock_submit" value="Sign up">
                 </div>
             </form>
         </section>
     </section>
 </div>
-<script src="../scripts/jQuery.js"></script>
 <script src="../scripts/script.js"></script>
-<script src="../scripts/selectScript.js"></script>
 </body>
 </html>

@@ -19,13 +19,26 @@ function action()
         "Tyrell_of_Highgarden"
     ];
 
-    $filename = "../json/data.json";
-    $buffer = file_get_contents($filename);
-    $data = json_decode($buffer, true);
+    $filePath = "../json/data.json";
+    $buffer = file_get_contents($filePath);
+    $data = json_decode($buffer,true);
 
-    echo "Hello";
+    $postEmail = $_POST['email'];
+    $postPassword = $_POST['pass'];
+
+    $email = $data[$postEmail]['email'];
+    $password = $data[$postEmail]['password'];
+    $name = $data[$postEmail]['name'];
+    $house = $data[$postEmail]['house'];
+    $hobbies = $data[$postEmail]['hobbies'];
+
+    if ($email == $postEmail && $password == $postPassword && $name == "" && $house == "" && $hobbies == "") {
+        header("Location: userInfo.php");
+    } else if ($email == $postEmail && $password == $postPassword) {
+        header("Location: ../anonymousVoting/php/index.php");
+    }
 
 
-    file_put_contents($filename, json_encode($data));
+//    file_put_contents($filename, json_encode($data));
 //    header("Location: chart.php");
 }

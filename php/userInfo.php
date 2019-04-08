@@ -15,7 +15,7 @@
         <div id="lBlock_house"></div>
     </section>
     <section class="rBlock">
-        <section id="form2" class="hide">
+        <section id="form2" class="show">
             <form id="aboutForm">
                 <div class="rBlock_gotForm2">GAME OF THRONES</div>
                 <div class="rBlock_aboutUForm2">
@@ -45,5 +45,7 @@
         </section>
     </section>
 </section>
+<script src="../scripts/jQuery.js"></script>
+<script src="../scripts/selectScript.js"></script>
 </body>
 </html>

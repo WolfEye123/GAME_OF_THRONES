@@ -27,6 +27,16 @@ body {
     background-image: url("../images/maxresdefault.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lBlock_house{
+    height: 100%;
+    width: 55%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .rBlock {
@@ -126,6 +136,7 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     color: white;
     background-color: #c0994f;
     border: 0;
+    cursor: pointer;
 }
 
 .rBlock_gotForm2{
