@@ -4,62 +4,84 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && function_exists($_POST["function"])
     $_POST["function"]();
 }
 
+/**
+ * Writes ​​to the file this fields values: name, house, hobbies.
+ */
 function userInfo()
 {
-    $filePath = "../json/data.json";
-    $buffer = file_get_contents($filePath);
-    $data = json_decode($buffer, true);
+    // variables
+    $fileName = $_SESSION['email'];
+    $filePath = "../json/$fileName.json";
 
-    $postEmail = $_SESSION['email'];
-    $postName = $_POST['name'];
-    $postHouse = $_POST['house'];
-    $postTextarea = $_POST['textarea'];
-
-    $data[$postEmail]['name'] = $postName;
-    $data[$postEmail]['house'] = $postHouse;
-    $data[$postEmail]['hobbies'] = $postTextarea;
-
-    file_put_contents($filePath, json_encode($data));
-
-    header("Location: ../anonymousVoting/php/index.php");
-}
-
-function index()
-{
-    $houses = [
-        "Arryn_of_the_Eyrie",
-        "Baratheon_of_Storms_End",
-        "Greyjoy_of_Pyke",
-        "Lannister_of_Casterly_Rock",
-        "Martell_of_Dorn",
-        "Stark_of_Winterfell",
-        "Targaryen_of_Kings_Landing",
-        "Tully_of_WaterLand",
-        "Tyrell_of_Highgarden"
-    ];
-
-    $filePath = "../json/data.json";
-    $buffer = file_get_contents($filePath);
-    $data = json_decode($buffer, true);
-
-    $postEmail = $_POST['email'];
-    $postPassword = $_POST['pass'];
-    $_SESSION['email'] = $postEmail;
-    $email = $data[$postEmail]['email'];
-    $password = $data[$postEmail]['password'];
-    $name = $data[$postEmail]['name'];
-    $house = $data[$postEmail]['house'];
-    $hobbies = $data[$postEmail]['hobbies'];
-
-    if ($email == $postEmail && $password == $postPassword) {
-        if (!$name == "" || !$house == "" || !$hobbies == ""){
-            header("Location: userInfo.php");
-        }
-    } else if ($email == $postEmail && $password == $postPassword) {
-        header("Location: ../anonymousVoting/php/index.php");
+    // if at least one of the fields is empty we return an error
+    if ($_POST['name'] === '' || $_POST['house'] === '' || $_POST['textarea'] === '') {
+        $_SESSION['inputsError'] = "showError";
+        header("Location: userInfo.php");
+        return;
     }
 
+    // writes fields to the value file
+    if ($dir = opendir('../json')) {
+        while (false !== ($file = readdir($dir))) {
+            if ($file === $fileName . ".json") {
+                $buffer = file_get_contents($filePath);
+                $data = json_decode($buffer, true);
+                $data['name'] = $_POST['name'];
+                $data['house'] = $_POST['house'];
+                $data['hobbies'] = $_POST['textarea'];
+                file_put_contents($filePath, json_encode($data));
+                header("Location: ../anonymousVoting/php/index.php");
+                return;
+            }
+        }
+    }
+}
 
-//    file_put_contents($filename, json_encode($data));
-//    header("Location: chart.php");
+/**
+ * validates the form during registration and authorization
+ */
+function index()
+{
+    // variables
+    $postEmail = $_POST['email'];
+    $postPassword = $_POST['pass'];
+    $checkbox = $_POST['checkbox'];
+    $_SESSION['email'] = $_POST['email'];
+
+    $filePath = "../json/$postEmail.json";
+
+    // json object
+    $object = (object)[
+        'email' => $postEmail,
+        'password' => $postPassword,
+        'checkbox' => $checkbox,
+        'name' => '',
+        'house' => '',
+        'hobbies' => ''
+    ];
+
+    // form validation
+    if ($dir = opendir('../json')) {
+        while (false !== ($file = readdir($dir))) {
+            if ($file === $postEmail . ".json") {
+                $buffer = file_get_contents($filePath);
+                $data = json_decode($buffer, true);
+                if ($data['password'] === $postPassword) {
+                    if ($data['name'] !== "" && $data['house'] !== "" && $data['hobbies'] !== "") {
+                        header("Location: ../anonymousVoting/php/index.php");
+                        return;
+                    }
+                    header("Location: userInfo.php");
+                    return;
+                } else {
+                    $_SESSION['passError'] = "showError";
+                    header("Location: index.php");
+                    return;
+                }
+            }
+        }
+        file_put_contents($filePath, json_encode($object));
+        header("Location: userInfo.php");
+        return;
+    }
 }

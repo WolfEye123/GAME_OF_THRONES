@@ -30,9 +30,11 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
                            id="rBlock_email"
                            name="email"
                            maxlength="35"
-                           placeholder="arya@westeros.com" required>
+                           placeholder="arya@westeros.com"
+                           pattern="[aA-zZ0-9]+@[a-z]+\.[a-z]+"
+                           required>
                 </div>
-                <div id="emailError" class="hideError">Incorrect email</div>
+                <div id="emailError" class="hideError">Incorrect email. Must be like "John@gmail.com"</div>
                 <div id="unknownUser" class="hideError">There are no registered accounts for this email</div>
                 <div class="rBlock_pass">
                     <label for="rBlock_pass">Choose secure password</label>
@@ -41,15 +43,23 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
                            id="rBlock_pass"
                            name="pass"
                            maxlength="35"
-                           placeholder="password" required>
+                           placeholder="password"
+                           pattern="[0-9aA-zZ]{8,}"
+                           required>
                 </div>
-                <div id="passError" class="hideError">Incorrect password</div>
+                <div id="passError"
+                     class="<?= isset($_SESSION['passError']) ? $_SESSION['passError'] : 'hideError' ?>">
+                    Incorrect password
+                </div>
                 <div class="rBlock_checkbox">
-                    <input type="checkbox" id="rBlock_checkbox">
+                    <input type="hidden" name="checkbox" value="off">
+                    <input type="checkbox"
+                           name="checkbox"
+                           id="rBlock_checkbox">
                     <label for="rBlock_checkbox" class="checkboxLabel">Remember Me</label>
                 </div>
+                <input type="submit" id="formSubmit" class="rBlock_submit" value="Sign up">
                 <div id="rBlock_submit">
-                    <input type="submit" disabled="disabled" id="formSubmit" class="rBlock_submit" value="Sign up">
                 </div>
             </form>
         </section>
@@ -60,6 +70,7 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
 </html>
 <?php
 unset(
-    $_SESSION['visitors'],
+    $_SESSION['inputsError'],
+    $_SESSION['passError']
 );
 ?>

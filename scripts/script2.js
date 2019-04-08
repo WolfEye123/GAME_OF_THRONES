@@ -1,36 +1,33 @@
-const name = document.getElementById("rBlock_userName");
-const textArea = document.getElementById("rBlock_textarea");
-const submit = document.getElementById("rBlock_submit2");
-const house = document.getElementById("houseInput");
+//regex
+const regExp = new RegExp(/[\/()\-§#!$%+&:;<=>?@_{|}~№«»€\d+]/i);
 
+/**
+ * the method processes the input name with the focus on it
+ * @type {HTMLElement}
+ */
+const name = document.getElementById("rBlock_userName");
 name.addEventListener('focus', (e) => {
     const nameError = document.getElementById('nameError');
-    const regExpName = new RegExp(/[\/()\-§#!$%+&:;<=>?@_{|}~№«»€\d+]/i);
     name.oninput = function () {
-        if (name.value.match(regExpName)){
+        if (name.value.match(regExp) && name.value != ""){
             nameError.className = "showError";
         } else {
             nameError.className = "hideError";
-            disableSubmit();
         }
     }
 });
-
+/**
+ * the method processes the input textarea with the focus on it
+ * @type {HTMLElement}
+ */
+const textArea = document.getElementById("rBlock_textarea");
 textArea.addEventListener('focus', (e) => {
     const textError = document.getElementById('textError');
-    const regExpName = new RegExp(/[\/()\-§#!$%+&:;<=>?@_{|}~№«»€\d+]/i);
     textArea.oninput = function () {
-        if (textArea.value.match(regExpName)){
+        if (textArea.value.match(regExp) && name.value != ""){
             textError.className = "showError";
         } else {
             textError.className = "hideError";
-            disableSubmit();
         }
     }
 });
-
-function disableSubmit() {
-    if(name.value != "" && textArea.value != "" && house.value != ""){
-        submit.disabled = false;
-    }
-}

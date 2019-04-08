@@ -52,7 +52,7 @@ $(document).ready(() => {
     const rB_thInpForm2 = $('#rBlock__textAreaDiv');
     const rB_sInpForm2_sub = $('#rBlock_submit2');
 
-    // EventListeners
+    // EventListener
     liFOption.click(function () {
         liFOption.html(`<label>Select House</label>`);
         if (flag) {
@@ -68,6 +68,7 @@ $(document).ready(() => {
         $('li').toggleClass('option');
     });
 
+    // EventListener
     liHide.click(function () {
         $('li').toggleClass('option');
         let name = $(this).text();

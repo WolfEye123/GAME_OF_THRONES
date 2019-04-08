@@ -63,7 +63,11 @@ session_start();
                               required></textarea>
                 </div>
                 <div id="textError" class="hideError">Incorrect text. Only letters.</div>
-                <input type="submit" disabled="disabled" id="rBlock_submit2" value="Save">
+                <div id="inputsError"
+                     class="<?= isset($_SESSION['inputsError']) ? $_SESSION['inputsError'] : 'hideError' ?>">
+                    Please fill in all the fields
+                </div>
+                <input type="submit" id="rBlock_submit2" value="Save">
             </form>
         </section>
     </section>
@@ -73,3 +77,9 @@ session_start();
 <script src="../scripts/selectScript.js"></script>
 </body>
 </html>
+<?php
+unset(
+    $_SESSION['inputsError'],
+    $_SESSION['passError']
+);
+?>
