@@ -1,5 +1,5 @@
 let myData;
-getFile('../json/data.json'); //путь к файлу
+getFile('../json/data.json');
 function getFile(fileName) {
     let request = new XMLHttpRequest();
     request.open('GET', fileName);

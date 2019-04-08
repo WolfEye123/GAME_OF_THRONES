@@ -49,8 +49,8 @@ $(document).ready(() => {
         $(this).css('color', '#d3bb89');
     });
 
-    const rB_thInpForm2 = $('#rBlock__thInputForm2');
-    const rB_sInpForm2_sub = $('#rBlock_sInputForm2-submit');
+    const rB_thInpForm2 = $('#rBlock__textAreaDiv');
+    const rB_sInpForm2_sub = $('#rBlock_submit2');
 
     // EventListeners
     liFOption.click(function () {
@@ -74,6 +74,9 @@ $(document).ready(() => {
         if (liFOption.text() === "Select House") {
             liFOption.html(`<img src="../images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`);
             $('#lBlock_house').css('background-image', `url(../images/housesToSlider/${name}.png)`);
+            console.log(name);
+            $('#houseInput').val(name);
+            console.log($('#houseInput').val());
             flag = !flag;
         }
         rB_sInpForm2_sub.show();

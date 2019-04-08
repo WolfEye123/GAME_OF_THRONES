@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['image'] = "";
 isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] = 1;
 
 ?>
@@ -24,7 +23,7 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
         <div class="rBlock_got">GAME OF THRONES</div>
         <section id="form1" class="show">
             <form id="loginForm" action="toDo.php" method="post">
-                <input type="hidden" name="function" value="action">
+                <input type="hidden" name="function" value="index">
                 <div class="rBlock_email">
                     <label for="rBlock_email">Enter your email</label>
                     <input type="email"
@@ -59,3 +58,8 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
 <script src="../scripts/script.js"></script>
 </body>
 </html>
+<?php
+unset(
+    $_SESSION['visitors'],
+);
+?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,35 +20,55 @@
     </section>
     <section class="rBlock">
         <section id="form2" class="show">
-            <form id="aboutForm">
-                <div class="rBlock_gotForm2">GAME OF THRONES</div>
-                <div class="rBlock_aboutUForm2">
+            <form id="aboutForm" action="toDo.php" method="post">
+                <input type="hidden" name="function" value="userInfo">
+                <input type="hidden" id="houseInput" name="house" value="">
+                <div class="rBlock_got2">GAME OF THRONES</div>
+                <div class="rBlock_aboutU2">
                     You've successfully joined the game. <br>
                     Tell us more about yourself.
                 </div>
-                <div class="rBlock__fInputForm2">
-                    <label for="rBlock_fInputForm2-name" class="rBlock_fInputForm2-whoAreYou">Who are you?</label>
-                    <div class="rBlock_fInputForm2-username">
+                <div class="rBlock_userName">
+                    <label for="rBlock_userName"
+                           class="rBlock_text1">
+                        Who are you?
+                    </label>
+                    <div class="rBlock_text2">
                         Alpha-numeric username
                     </div>
-                    <input type="text" id="rBlock_fInputForm2-name" maxlength="35"
-                           placeholder="arya">
+                    <input type="text"
+                           id="rBlock_userName"
+                           name="name"
+                           maxlength="35"
+                           placeholder="arya"
+                           required>
                 </div>
-                <div class="rBlock_sInputForm2">
+                <div id="nameError" class="hideError">Incorrect name. Only letters.</div>
+                <div class="rBlock_select">
                     <label>Your Great House</label>
                     <section class="wrapper">
                         <div class="newSelector"></div>
                     </section>
                 </div>
-                <div id="rBlock__thInputForm2" class="rBlock__thInputForm2">
-                    <label for="rBlock_thInputForm2-textarea">Your preferences, hobbies, wishes, etc.</label>
-                    <textarea wrap="hard" rows="3" id="rBlock_thInputForm2-textarea" placeholder="I have a long TOKILL list"></textarea>
+                <div id="rBlock__textAreaDiv"
+                     class="rBlock__textAreaDiv">
+                    <label for="rBlock_textarea">
+                        Your preferences, hobbies, wishes, etc.
+                    </label>
+                    <textarea wrap="hard"
+                              rows="3"
+                              name="textarea"
+                              id="rBlock_textarea"
+                              placeholder="I have a long TOKILL list"
+                              required></textarea>
                 </div>
-                <input type="submit" id="rBlock_sInputForm2-submit" value="Save">
+                <div id="textError" class="hideError">Incorrect text. Only letters.</div>
+                <input type="submit" disabled="disabled" id="rBlock_submit2" value="Save">
             </form>
         </section>
     </section>
 </section>
+<script src="../scripts/script2.js"></script>
 <script src="../scripts/jQuery.js"></script>
 <script src="../scripts/selectScript.js"></script>
 </body>

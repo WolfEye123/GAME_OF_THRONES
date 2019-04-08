@@ -139,14 +139,14 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     cursor: pointer;
 }
 
-.rBlock_gotForm2{
+.rBlock_got2{
     font-family: "GameOfThrones";
     padding-top: 60px;
     text-align: center;
     font-size: 1.8rem;
 }
 
-.rBlock_aboutUForm2{
+.rBlock_aboutU2{
     font-size: 0.9rem;
     color: #c7c9c6;
     margin-left: 20%;
@@ -155,24 +155,24 @@ input[type="checkbox"]:checked + .checkboxLabel::before{
     border-left: 2px solid #d3bb89;
 }
 
-.rBlock__fInputForm2,
-.rBlock_sInputForm2,
-.rBlock__thInputForm2{
+.rBlock_userName,
+.rBlock_select,
+.rBlock__textAreaDiv{
     margin-left: 20%;
     margin-top: 20px;
     margin-right: 20%;
 }
 
-.rBlock_sInputForm2{
+.rBlock_select{
     display: flex;
     flex-direction: column;
 }
 
-.rBlock_fInputForm2-whoAreYou{
+.rBlock_text1{
     font-size: 1.2rem;
 }
 
-.rBlock_fInputForm2-username{
+.rBlock_text2{
     font-size: 0.7rem;
     color: #c7c9c6;
 }
