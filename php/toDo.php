@@ -24,17 +24,17 @@ function userInfo()
     if ($dir = opendir('../json')) {
         while (false !== ($file = readdir($dir))) {
             if ($file === $fileName . ".json") {
-                $buffer = file_get_contents($filePath);
-                $data = json_decode($buffer, true);
-                $data['name'] = $_POST['name'];
-                $data['house'] = $_POST['house'];
-                $data['hobbies'] = $_POST['textarea'];
-                file_put_contents($filePath, json_encode($data));
-                header("Location: ../anonymousVoting/php/index.php");
-                return;
+                break;
             }
         }
     }
+    $buffer = file_get_contents($filePath);
+    $data = json_decode($buffer, true);
+    $data['name'] = $_POST['name'];
+    $data['house'] = $_POST['house'];
+    $data['hobbies'] = $_POST['textarea'];
+    file_put_contents($filePath, json_encode($data));
+    header("Location: ../anonymousVoting/php/index.php");
 }
 
 /**
