@@ -64,21 +64,22 @@ function index()
     if ($dir = opendir('../json')) {
         while (false !== ($file = readdir($dir))) {
             if ($file === $postEmail . ".json") {
-                $buffer = file_get_contents($filePath);
-                $data = json_decode($buffer, true);
-                if ($data['password'] === $postPassword) {
-                    if ($data['name'] !== "" && $data['house'] !== "" && $data['hobbies'] !== "") {
-                        header("Location: ../anonymousVoting/php/index.php");
-                        return;
-                    }
-                    header("Location: userInfo.php");
-                    return;
-                } else {
-                    $_SESSION['passError'] = "showError";
-                    header("Location: index.php");
-                    return;
-                }
+                break;
             }
+        }
+        $buffer = file_get_contents($filePath);
+        $data = json_decode($buffer, true);
+        if ($data['password'] === $postPassword) {
+            if ($data['name'] !== "" && $data['house'] !== "" && $data['hobbies'] !== "") {
+                header("Location: ../anonymousVoting/php/index.php");
+                return;
+            }
+            header("Location: userInfo.php");
+            return;
+        } else {
+            $_SESSION['passError'] = "showError";
+            header("Location: index.php");
+            return;
         }
         file_put_contents($filePath, json_encode($object));
         header("Location: userInfo.php");
