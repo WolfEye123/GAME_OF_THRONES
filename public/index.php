@@ -22,7 +22,7 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
 <body>
 <div class="mainWrap">
     <section id="lBlock" class="lBlock">
-        <div class="lBlock_slider"></div>
+        <div id="lBlock_slider" class="lBlock_slider"></div>
     </section>
     <section class="rBlock">
         <div class="visitors">

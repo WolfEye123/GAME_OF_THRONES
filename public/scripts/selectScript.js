@@ -81,9 +81,8 @@ $(document).ready(() => {
                     break;
                 }
             }
-            $('.lBlock').slick({
-                initialSlide: counter
-            });
+            $('.lBlock_slider').slick('slickGoTo', counter);
+            $('#lBlock_slider').slick({slickGoTo: counter});
             $('#houseInput').val(name);
             flag = !flag;
         }

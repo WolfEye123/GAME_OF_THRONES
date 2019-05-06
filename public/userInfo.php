@@ -22,7 +22,7 @@ session_start();
 <body>
 <section class="mainWrap">
     <section id="lBlock" class="lBlock">
-        <div class="lBlock_slider"></div>
+        <div id="lBlock_slider" class="lBlock_slider"></div>
     </section>
     <section class="rBlock">
         <section id="form2" class="show">
@@ -79,8 +79,8 @@ session_start();
     </section>
 </section>
 <script src="scripts/userInfoScript.js"></script>
-<script src="scripts/sliderScript.js"></script>
 <script src="scripts/selectScript.js"></script>
+<script src="scripts/sliderScript.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="scripts/slick/slick.min.js"></script>

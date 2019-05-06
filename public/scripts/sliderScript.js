@@ -13,7 +13,7 @@ const SLIDER = [
 
 $(document).ready(() => {
     const div = '<div></div>';
-    const slider = $('.lBlock_slider');
+    const slider = $('#lBlock_slider');
 
     SLIDER.map((sliderImage) => {
         slider.append($(div).addClass('slider').
@@ -25,7 +25,7 @@ $(document).ready(() => {
         ));
     });
 
-    $('.lBlock_slider').slick({
+    $('#lBlock_slider').slick({
         dots: true,
         infinite: true,
         speed: 500,
