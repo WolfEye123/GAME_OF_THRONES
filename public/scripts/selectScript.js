@@ -71,13 +71,20 @@ $(document).ready(() => {
     // EventListener
     liHide.click(function () {
         $('li').toggleClass('option');
-        let name = $(this).text();
+        const name = $(this).text();
         if (liFOption.text() === "Select House") {
             liFOption.html(`<img src="images/housesToSelect/${name}.png" alt="${name}"><label>${name}</label>`);
-            $('#lBlock_house').css('background-image', `url(../images/housesToSlider/${name}.png)`);
-            console.log(name);
+            let counter = 0;
+            for (let newName of NAMES) {
+                counter++;
+                if (newName === name){
+                    break;
+                }
+            }
+            $('.lBlock').slick({
+                initialSlide: counter
+            });
             $('#houseInput').val(name);
-            console.log($('#houseInput').val());
             flag = !flag;
         }
         rB_sInpForm2_sub.show();
