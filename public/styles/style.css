@@ -24,10 +24,8 @@ body {
 
 .lBlock {
     width: 50%;
-    background-image: url("../images/housesToSlider/maxresdefault.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url("../images/darknoise.png");
+    background-size: contain;
 }
 
 .lBlock_slider img{
