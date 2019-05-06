@@ -41,11 +41,11 @@ $(document).ready(() => {
 
     // option hover
     liHide.mouseenter(function () {
-        $(this).css('background-image', 'url("../images/shortcutIcon.png")');
+        $(this).css('background-image', `url("../images/shortcutIcon.png")`);
         $(this).css('color', 'black');
     });
     liHide.mouseleave(function () {
-        $(this).css('background-image', 'url("../images/darknoise.png")');
+        $(this).css('background-image', `url("../images/darknoise.png")`);
         $(this).css('color', '#d3bb89');
     });
 
