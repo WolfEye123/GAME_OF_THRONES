@@ -12,11 +12,17 @@ session_start();
     <link rel="shortcut icon" type="image/png" href="images/shortcutIcon.png"/>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/selectStyle.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="scripts/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="scripts/slick/slick-theme.css"/>
 </head>
 <body>
 <section class="mainWrap">
     <section id="lBlock" class="lBlock">
-        <div id="lBlock_house"></div>
+        <div class="lBlock_slider"></div>
     </section>
     <section class="rBlock">
         <section id="form2" class="show">
@@ -72,12 +78,12 @@ session_start();
         </section>
     </section>
 </section>
-<script src="scripts/script2.js"></script>
-<script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+<script src="scripts/userInfoScript.js"></script>
+<script src="scripts/sliderScript.js"></script>
 <script src="scripts/selectScript.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="scripts/slick/slick.min.js"></script>
 </body>
 </html>
 <?php

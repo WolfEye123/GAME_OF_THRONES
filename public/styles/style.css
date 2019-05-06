@@ -24,20 +24,15 @@ body {
 
 .lBlock {
     width: 50%;
-    background-image: url("../images/maxresdefault.jpg");
+    background-image: url("../images/housesToSlider/maxresdefault.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-#lBlock_house{
-    height: 100%;
-    width: 55%;
-    background-repeat: no-repeat;
-    background-size: contain;
+.lBlock_slider img{
+    width: 100%;
+    height: 95vh;
 }
 
 .rBlock {
@@ -223,6 +218,7 @@ input[type="submit"]{
     margin-left: 20%;
 }
 
-.select{
-
+.slider{
+    width: 50%;
+    height: 100vh;
 }

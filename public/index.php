@@ -12,10 +12,18 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
     <title>GAME OF THRONES</title>
     <link rel="shortcut icon" type="image/png" href="images/shortcutIcon.png"/>
     <link rel="stylesheet" href="styles/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="scripts/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="scripts/slick/slick-theme.css"/>
 </head>
 <body>
 <div class="mainWrap">
-    <section id="lBlock" class="lBlock"></section>
+    <section id="lBlock" class="lBlock">
+        <div class="lBlock_slider"></div>
+    </section>
     <section class="rBlock">
         <div class="visitors">
             Visitors: <?= isset($_SESSION['visitors']) ? $_SESSION['visitors'] : 0 ?>
@@ -68,7 +76,11 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
         </section>
     </section>
 </div>
-<script src="scripts/script.js"></script>
+<script src="scripts/indexScript.js"></script>
+<script src="scripts/sliderScript.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="scripts/slick/slick.min.js"></script>
 </body>
 </html>
 <?php
