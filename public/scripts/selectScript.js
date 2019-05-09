@@ -39,30 +39,20 @@ $(document).ready(() => {
 
     liLast.css('border', 'none');
 
-    // option hover
-    liHide.mouseenter(function () {
-        $(this).css('background-image', `url("../images/shortcutIcon.png")`);
-        $(this).css('color', 'black');
-    });
-    liHide.mouseleave(function () {
-        $(this).css('background-image', `url("../images/darknoise.png")`);
-        $(this).css('color', '#d3bb89');
-    });
-
-    const rB_thInpForm2 = $('#rBlock__textAreaDiv');
-    const rB_sInpForm2_sub = $('#rBlock_submit2');
+    const rBlock__textAreaDiv = $('#rBlock__textAreaDiv');
+    const rBlock_submit2 = $('#rBlock_submit2');
 
     // EventListener
     liFOption.click(function () {
         liFOption.html(`<label>Select House</label>`);
         if (flag) {
             flag = !flag;
-            rB_sInpForm2_sub.hide();
-            rB_thInpForm2.hide();
+            rBlock_submit2.hide();
+            rBlock__textAreaDiv.hide();
         } else {
             $('#lBlock_house').css('background-image', 'none');
-            rB_sInpForm2_sub.show();
-            rB_thInpForm2.show();
+            rBlock_submit2.show();
+            rBlock__textAreaDiv.show();
             flag = !flag;
         }
         $('li').toggleClass('option');
@@ -85,7 +75,7 @@ $(document).ready(() => {
             $('#houseInput').val(name);
             flag = !flag;
         }
-        rB_sInpForm2_sub.show();
-        rB_thInpForm2.show();
+        rBlock_submit2.show();
+        rBlock__textAreaDiv.show();
     })
 });

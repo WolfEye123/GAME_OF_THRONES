@@ -16,8 +16,8 @@ $(document).ready(() => {
     const slider = $('#lBlock_slider');
 
     SLIDER.map((sliderImage) => {
-        slider.append($(div).addClass('slider').
-        html(`
+        slider.append($(div).addClass('slider').attr('style','display: flex').html(
+            `
                 <img 
                 src="images/housesToSlider/${sliderImage}.png" 
                 alt="${sliderImage}">
@@ -26,11 +26,9 @@ $(document).ready(() => {
     });
 
     $('#lBlock_slider').slick({
-        dots: true,
         infinite: true,
         speed: 500,
         fade: true,
-        cssEase: 'linear',
-        arrows: false
+        cssEase: 'linear'
     });
 });
