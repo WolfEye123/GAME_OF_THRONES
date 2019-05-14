@@ -22,9 +22,7 @@ session_start();
     </section>
     <section class="rBlock">
         <section id="form2" class="show">
-            <form id="aboutForm" action="../resources/php/actions.php" method="post">
-                <input type="hidden" name="function" value="2">
-                <input type="hidden" id="houseInput" name="house" value="">
+            <form id="aboutForm">
                 <div class="rBlock_got2">GAME OF THRONES</div>
                 <div class="rBlock_aboutU2">
                     You've successfully joined the game. <br>
@@ -43,9 +41,10 @@ session_start();
                            name="name"
                            maxlength="35"
                            placeholder="arya"
-                           required>
+                    required>
                 </div>
                 <div id="nameError" class="hideError">Incorrect name. Only letters.</div>
+                <input type="hidden" id="houseInput" name="house" value="">
                 <div class="rBlock_select">
                     <label>Your Great House</label>
                     <section class="wrapper">
@@ -69,7 +68,7 @@ session_start();
                      class="<?= isset($_SESSION['inputsError']) ? $_SESSION['inputsError'] : 'hideError' ?>">
                     Please fill in all the fields
                 </div>
-                <input type="submit" id="rBlock_submit2" value="Save">
+                <button type="button" class="rBlock_submit2" id="rBlock_submit2">Save</button>
             </form>
         </section>
     </section>

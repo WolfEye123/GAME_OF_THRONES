@@ -26,8 +26,7 @@ isset($_SESSION['visitors']) ? $_SESSION['visitors']++ : $_SESSION['visitors'] =
         </div>
         <div class="rBlock_got">GAME OF THRONES</div>
         <section id="form1" class="show">
-            <form id="loginForm" action="../resources/php/actions.php" method="post">
-                <input type="hidden" name="function" value="1">
+            <form id="loginForm" action="../resources/php/authorization.php" method="post">
                 <div class="rBlock_email">
                     <label for="rBlock_email">Enter your email</label>
                     <input type="email"
